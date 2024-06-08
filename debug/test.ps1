@@ -10,8 +10,7 @@ cls
 function Convert-Predictions
 {
     param (
-        [double[]]$predictions,
-        [double]$threshold = 0.5
+        [double[]]$predictions
     )
     # Find the maximum value in the predictions
     $max_value = $predictions | Measure-Object -Maximum | Select-Object -ExpandProperty Maximum

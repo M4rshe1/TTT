@@ -1069,6 +1069,14 @@ function Start-GameLoopAI
                 }
             }
         }
+        $winner = Get-Winner $board
+        if ($winner)
+        {
+            clear-host
+            Write-Board $board
+            Write-Host "$winner has won!!!"
+            return
+        }
         $board = Get-AIMove -input_board $board
         $winner = Get-Winner $board
         if ($winner)
