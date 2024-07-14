@@ -1,5 +1,4 @@
 from sklearn.model_selection import train_test_split
-from keras.layers import Input
 import keras
 import numpy as np
 import json
@@ -7,7 +6,7 @@ import os
 
 
 def create_model():
-    input_layer = Input(shape=(27,))
+    input_layer = keras.layers.Input(shape=(27,))
     dense1 = keras.layers.Dense(45, activation='relu')(input_layer)
     dense2 = keras.layers.Dense(65, activation='relu')(dense1)
     dense3 = keras.layers.Dense(45, activation='relu')(dense2)
