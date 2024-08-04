@@ -16,9 +16,9 @@
 
 param (
     [Alias('c')]
-    [Switch]$FIRST_COMPUTER_MOVE_RANDOM = $true,
+    [Switch]$FIRST_COMPUTER_MOVE_RANDOM,
     [Alias('n')]
-    [Switch]$FIRST_NEURAL_NETWORK_MOVE_RANDOM = $true,
+    [Switch]$FIRST_NEURAL_NETWORK_MOVE_RANDOM,
     [Alias('p')]
     [Switch]$FIRST_MOVE_BY_PLAYER = $false,
     [Alias('p1')]
@@ -29,8 +29,8 @@ param (
     [Switch]$Help
 )
 
-$Global:FIRST_COMPUTER_MOVE_RANDOM = $FIRST_COMPUTER_MOVE_RANDOM
-$Global:FIRST_NEURAL_NETWORK_MOVE_RANDOM = $FIRST_NEURAL_NETWORK_MOVE_RANDOM
+$Global:FIRST_COMPUTER_MOVE_RANDOM = -not $FIRST_COMPUTER_MOVE_RANDOM
+$Global:FIRST_NEURAL_NETWORK_MOVE_RANDOM = -not $FIRST_NEURAL_NETWORK_MOVE_RANDOM
 $Global:FIRST_MOVE_BY_PLAYER = $FIRST_MOVE_BY_PLAYER
 $Global:player1 = $player1
 $Global:player2 = $player2
@@ -1209,11 +1209,6 @@ MODES
             Total training time: 42 seconds
             Accuracy: 0.999 (completely correct moves)
             Accuracy: 1.0 (Not correct but valid moves)
-
-
-
-
-
 
 
 "@ | Write-Host
